@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmpayment" >
+    <name>VMPAYMENT_ZARINPALWG</name>
+    <creationDate>خرداد 91</creationDate>
+    <author>امیررضا تهرانی</author>
+    <authorUrl>http://www.joomina.ir</authorUrl>
+    <copyright>Copyright (C) 2004-2011 Virtuemart Team. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <version>1</version>
+	<description><![CDATA[<body link="#0170CA" alink="#008080" vlink="#0170CA"><div align="center"><table border="1" cellpadding="6" cellspacing="0" id="table1" bordercolor="#e5e5e5" style="font-family: Tahoma" width="90%" dir="rtl"><tr><td rowspan="6" width="190" height="200"><img border="0" src="http://www.topjoomina.ir/download.php?imgf=13233526261.jpg" width="202" height="190"></td><td colspan="2" bgcolor="#ff6600"><p align="center"><b><a style="text-decoration: none" target="_blank" href="http://www.joomina.ir"><font color="#FFFFFF">وب سایت جومینا</font></a>&nbsp;تقدیم میکند	</b> </p></td></tr><tr><td width="150" bgcolor="#0170ca"><font size="2" color="#FFFFFF">نام افزونه :</font></td><td bgcolor="#f5f5f5"><span lang="fa">پلاگين اتصال VIRTU 2  به درگاه زرين پال</span></td></tr><tr><td width="150" bgcolor="#0170ca"><font size="2" color="#FFFFFF">توضیحات:</font></td><td bgcolor="#f5f5f5">به کمک اين افزونه قادر خواهيد بود تا فروشگاه ساز VIRTU2 را به درگاه زرين پال براي پرداخت هاي خود متصل نماييد<br/> فراموش ننماييد پلاگين را از مديريت پلاگين ها فعال نماييد</span></td></tr><tr><td width="150" bgcolor="#0170ca"><font color="#FFFFFF"><font size="2">توسعه دهنده برای</font><span lang="fa"><font size="2"> ایرانیان:</font></span></font></td><td bgcolor="#f5f5f5"><span lang="fa">وب سایت جومینا</span></td></tr><td width="150" bgcolor="#0170ca"><font size="2" color="#FFFFFF">مراجع جوملا<span lang="fa"> ایرانی</span>:</font></td><td bgcolor="#f5f5f5">	<p align="center"><a style="text-decoration: none" target="_blank" href="http://www.joomina.ir">وب سایت جومینا @ اميررضا تهراني</a><span lang="fa">&nbsp;&nbsp; ا&nbsp;&nbsp; </span>	<a style="text-decoration: none" target="_blank" href="http://forum.joomina.ir">انجمن تخصصی جوملا</a><span lang="fa">&nbsp;&nbsp; ا&nbsp;&nbsp;&nbsp;</span><a style="text-decoration: none" target="_blank" href="http://joominamarket.com">فروشگاه افزونه های تخصصی جوملا</a>&nbsp;&nbsp;<span lang="fa">ا</span>&nbsp;&nbsp;<a style="text-decoration: none" target="_blank" href="http://www.ir-payamak.com">پیامک ایرانیان</a>&nbsp;&nbsp;<a style="text-decoration: none" target="_blank" href="http://joominamarket.com">فروشگاه افزونه های تخصصی جوملا</a>&nbsp;&nbsp; <span lang="fa">ا</span>&nbsp;&nbsp;<a style="text-decoration: none" target="_blank" href="http://www.joominaCMS.com">جومینا سی ام اس</a>&nbsp;&nbsp;</td></tr></table></div>]]></description>
+
+     <files folder="site">
+	<filename plugin="vmzarinpal">vmzarinpalwg.php</filename>
+	<filename plugin="vmzarinpal">index.html</filename>
+	<filename plugin="vmzarinpal">nusoap.php</filename>
+	
+    </files>    
+	<params addpath="/administrator/components/com_virtuemart/elements">
+	<param type="vmjpluginwarning" />
+	<param   type="spacer" default="درگاه زرین پال" level="level1" />
+	
+	<param name="code" type="text" size="50" default="" label="کد درگاه زرین پال" description="" />	
+	<param name="mmm" type="text" size="50" default="" label="ایمیل مدیر" description="" />		
+	
+	<param name="payment_currency" type="vmacceptedcurrency" default="" label="واحد پول" description="" />
+	<param   type="spacer" default="پارامترهای فروشگاه" level="level1" />
+	<param	name="payment_logos" type="vmfiles" label="لوگو بانک زرین پال"
+             	description="درگاه زرین پال"
+             	directory="/images/stories/virtuemart/payment"
+             	default="default" hide_default="1" hide_none="1"
+             	stripext="0"  exclude="^_" />
+	<param name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="وضعیت سفارش برای پرداخت های در انتظار" description="" />
+	<param name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="وضعیت سفارش برای معاملات موفق" description="" />
+	<param name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" label="وضعیت سفارش برای معاملات ناموفق" description="" />
+	<param name="countries" type="vmcountries"  scope="com_virtuemart" default="" label="کشور" description=""/>
+	<param name="min_amount" type="text"  label="حداقل مبلغ" description="" />
+	<param name="max_amount" type="text"  label="حداکثر مبلغ" description="" />
+	<param name="cost_per_transaction" type="text"  label="هزینه در هر معامله" description="" />
+	<param name="cost_percent_total" type="text"  label="درصد از کل مبلغ" description="" />
+	<param name="tax_id" type="vmtaxes" scope="com_virtuemart"  label="مالیات" description="" />
+    </params>
+
+    <fieldset addpath="/administrator/components/com_virtuemart/elements">
+	<field type="vmjpluginwarning" />
+	<field type="spacer" default="درگاه زرين پال" level="level1" />
+	
+	<field name="code" type="text" size="50" default="" label="شناسه بانک زرین پال" description="" />
+	<field name="mmm" type="text" size="50" default="" label="ایمیل مدیر" description="" />
+	
+	<field	name="payment_logos" type="vmfiles" label="لوگو زرین پال"
+             	description=""
+             	directory="/images/stories/virtuemart/payment"
+             	default="default" hide_default="1" hide_none="1"
+             	stripext="0"  exclude="^_" />
+
+
+	<field   type="spacer" default="VMPAYMENT_PAYPAL_VIRTUEMART_fieldS" level="level1" />
+	<field	name="payment_logos" type="vmfiles" label="لوگو"
+             	description="بانک پارسیان"
+             	directory="/images/stories/virtuemart/payment"
+             	default="default" hide_default="1" hide_none="1"
+             	stripext="0"  exclude="^_" />
+	<field name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="وضعیت سفارش برای پرداخت های در انتظار" description="" />
+	<field name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="وضعیت سفارش برای معاملات موفق" description="" />
+	<field name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" label="وضعیت سفارش برای معاملات ناموفق" description="" />
+	<field name="countries" type="vmcountries"  scope="com_virtuemart" default="" label="کشور" description=""/>
+
+	<field name="min_amount" type="text"  label="حداقل مبلغ" description="" />
+	<field name="max_amount" type="text"  label="حداکثر مبلغ" description="" />
+	<field name="cost" type="text"  label="VMPAYMENT_PAYPAL_FEE" description="" />
+	<field name="payment_tax_id" type="vmtaxes" scope="com_virtuemart"  label="مالیات" description="" />
+
+
+    </fieldset>
+</install>
