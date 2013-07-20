@@ -126,7 +126,7 @@ $amount = round($totalInPaymentCurrency); // مبلغ فاكتور
 $callBackUrl = "".JURI::root()."index.php?option=com_virtuemart&view=pluginresponse&task=pluginresponsereceived&on=".$order['details']['BT']->order_number."&pm=".$order['details']['BT']->virtuemart_paymentmethod_id."";
 include_once('nusoap.php');
  echo '<h2> در حال انتقال به بانک ......</h2>';
-   $client = new nusoap_client('https://www.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl');
+   $client = new nusoap_client('https://de.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl');
 
 	$res = $client->call('PaymentRequest', array(
 			array(
@@ -214,7 +214,7 @@ $ons = $_GET['on'];
   if ($status== "OK") {
 	include_once('nusoap.php');
 	$au = $_GET['Authority'];
-	$soapclient  = new nusoap_client('https://www.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl');
+	$soapclient  = new nusoap_client('https://de.zarinpal.com/pg/services/WebGate/wsdl', 'wsdl');
 	$res = $soapclient->call("PaymentVerification", array(
 	array(
 					'MerchantID'	 => $merchantID ,
