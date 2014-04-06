@@ -131,15 +131,15 @@ class plgVmPaymentVmzarinpalwg extends vmPSPlugin {
 														 )
 		));
 		
-		if($res->Status == 100){
+		if($res['Status'] == 100){
 			echo '<h2> در حال انتقال به بانک ......</h2>';
-			$html .= '<form name="vm_zarin_form" Method="post" action="https://www.zarinpal.com/pg/StartPay/'. $res->Authority .'">';
+			$html .= '<form name="vm_zarin_form" Method="post" action="https://www.zarinpal.com/pg/StartPay/'. $res['Authority'] .'">';
 			$html .= '</form>';
 			$html.= '<script type="text/javascript">';
 			$html.= ' document.vm_zarin_form.submit();';
 			$html.= '</script>';
 		} else {
-			echo 'ERR:'. $res->Status ;
+			echo 'ERR:'. $res['Status'] ;
 		}
 		
 		// 	2 = don't delete the cart, don't send email and don't redirect
@@ -207,7 +207,7 @@ class plgVmPaymentVmzarinpalwg extends vmPSPlugin {
 																	)
 										);					  
 
-				if($res->Status == 100){
+				if($res['Status'] == 100){
 				   $dbcoupon = JFactory::getDBO();  
 				  
 					$inscoupon = new stdClass();  
@@ -270,7 +270,7 @@ class plgVmPaymentVmzarinpalwg extends vmPSPlugin {
 				} else {
 					// this is a UNsucccessfull payment
 					// we update our DataBase
-					echo 'تراکنش ناموفق می باشد. کد خطا: '. $res->Status;
+					echo 'تراکنش ناموفق می باشد. کد خطا: '. $res['Status'];
 				}
 
 			} else {
